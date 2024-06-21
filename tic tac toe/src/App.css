@@ -1,0 +1,19 @@
+*{
+    margin:0;
+}
+
+#app{
+    display: flex;
+    margin: auto;
+    margin-top:15%;
+    flex-wrap: wrap;
+    width: 150px;
+}
+.divs{
+    height:40px;
+    width:40px;
+    border: 2px solid black;
+    background-color: salmon;
+    text-align: center;
+    align-items: center;
+  }

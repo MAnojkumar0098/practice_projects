@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Messenger from './messenger';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:8000");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <App socket={socket} />
+  },
+  {
+    path: '/m',
+    element: <Messenger socket={socket} />
+  }
+])
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routes} />
   </React.StrictMode>
 );
 
